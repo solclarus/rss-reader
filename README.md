@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RSS Reader
 
-## Getting Started
+RSS フィードを複数のタブで管理できるモダンなWebアプリケーションです。
 
-First, run the development server:
+## 機能
+
+- 📖 複数のRSSフィードを同時に表示
+- 🔄 タブベースのフィード管理
+- 📱 レスポンシブデザイン（PC・モバイル対応）
+- 🌓 ダークモード切替
+- 💾 ローカルストレージでの状態保存
+- ⚡ 高速なローディングとスケルトン表示
+
+## 技術スタック
+
+- **フロントエンド**: Next.js 15 (App Router) + React 19 + TypeScript
+- **スタイリング**: Tailwind CSS v4
+- **UI コンポーネント**: shadcn/ui
+- **アニメーション**: motion/react
+- **テーマ管理**: next-themes
+- **RSS パース**: rss-parser
+- **通知**: sonner
+- **コード品質**: Biome
+
+## はじめに
+
+### 前提条件
+
+- Node.js 18以上
+- npm または yarn
+
+### インストール
+
+```bash
+# リポジトリをクローン
+git clone https://github.com/solclarus/rss-reader.git
+cd rss-reader
+
+# 依存関係をインストール
+npm install
+```
+
+### 開発サーバー起動
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000](http://localhost:3000) をブラウザで開いてください。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### ビルド
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# プロダクションビルド
+npm run build
 
-## Learn More
+# プロダクションサーバー起動  
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 使い方
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **RSS フィード追加**: URLを入力してRSSフィードを追加
+2. **タブ管理**: 複数のフィードをタブで切り替え
+3. **記事閲覧**: 記事をクリックして元サイトを表示
+4. **フィード更新**: 更新ボタンで最新記事を取得
+5. **テーマ切替**: ダーク・ライトモード切替
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 開発
 
-## Deploy on Vercel
+### コードフォーマット・リント
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Biome チェック実行
+npm run lint
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Biome フォーマット実行
+npm run format
+```
+
+### コミット規約
+
+```bash
+<gitmoji> <type>: <日本語での説明>
+```
+
+例：
+- `✨ feat: 新機能を追加`
+- `🐛 fix: バグを修正`
+- `💄 style: UIを改善`
+
+詳細は [CLAUDE.md](./CLAUDE.md) を参照してください。
+
+## ライセンス
+
+MIT License
+
+## 貢献
+
+プルリクエストやIssueの投稿を歓迎します。[CLAUDE.md](./CLAUDE.md) の開発ガイドラインに沿ってコントリビューションしてください。
